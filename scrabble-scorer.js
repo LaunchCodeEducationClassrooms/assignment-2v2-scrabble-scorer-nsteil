@@ -82,7 +82,7 @@ function initialPrompt() {
    return userWord
 };
 
-let simpleScore = {name:`Simple Score`,description:`Each leter is worth 1 point.`,scorerFunction:simpleScorer};
+let simpleScore = {name:`Simple Score`,description:`Each letter is worth 1 point.`,scorerFunction:simpleScorer};
 
 let vowelBonusScore = {name:`Bonus Vowels`,description:`Vowels are 3 pts, consonants are 1 pt.`,scorerFunction:vowelBonusScorer};
 
@@ -116,7 +116,7 @@ function transform(object) {
     while (turn < object[item].length) {
       let newKey = object[item][turn]
       newKey = newKey.toLowerCase()
-      newObject[`${newKey}`] = item;
+      newObject[`${newKey}`] = Number(item);
      
       turn++
     }

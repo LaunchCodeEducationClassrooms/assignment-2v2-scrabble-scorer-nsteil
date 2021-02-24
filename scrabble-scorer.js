@@ -82,11 +82,11 @@ function initialPrompt() {
    return userWord
 };
 
-let simpleScoring = {name:`Simple Score`,description:`Each letter is worth 1 point.`,scorerFunction:simpleScore};
+let simpleScoring = {name:`Simple Score`,description:`Each letter is worth 1 point.`,scoringFunction:simpleScore};
 
-let vowelBonusScoring = {name:`Bonus Vowels`,description:`Vowels are 3 pts, consonants are 1 pt.`,scorerFunction:vowelBonusScore};
+let vowelBonusScoring = {name:`Bonus Vowels`,description:`Vowels are 3 pts, consonants are 1 pt.`,scoringFunction:vowelBonusScore};
 
-let scrabbleScoring = {name:`Scrabble`,description:`The traditional scoring algorithm.`,scorerFunction:scrabbleScore};
+let scrabbleScoring = {name:`Scrabble`,description:`The traditional scoring algorithm.`,scoringFunction:scrabbleScore};
 
 const scoringAlgorithms = [simpleScoring, vowelBonusScoring, scrabbleScoring];
 
@@ -97,11 +97,11 @@ function scorerPrompt() {
 2 - ${scrabbleScoring.name}: ${scrabbleScoring.description}\n`)
   let num = input.question("Enter 0, 1, or 2: ")
   if (num == 0) {
-    return console.log(`Score for '${userWord}': ${simpleScoring.scorerFunction(userWord)}`)
+    return console.log(`Score for '${userWord}': ${simpleScoring.scoringFunction(userWord)}`)
   } else if (num == 1) {
-    return console.log(`Score for '${userWord}': ${vowelBonusScoring.scorerFunction(userWord)}`)
+    return console.log(`Score for '${userWord}': ${vowelBonusScoring.scoringFunction(userWord)}`)
   } else if (num ==2) {
-    return console.log(`Score for '${userWord}':\n${scrabbleScoring.scorerFunction(userWord)}`)
+    return console.log(`Score for '${userWord}':\n${scrabbleScoring.scoringFunction(userWord)}`)
   } else {
 
   }

@@ -88,7 +88,7 @@ let vowelBonusScoring = {name:`Bonus Vowels`,description:`Vowels are 3 pts, cons
 
 let scrabbleScoring = {name:`Scrabble`,description:`The traditional scoring algorithm.`,scorerFunction:scrabbleScore};
 
-const scoringAlgorithms = [simpleScore, vowelBonusScore, scrabbleScore];
+const scoringAlgorithms = [simpleScoring, vowelBonusScoring, scrabbleScoring];
 
 function scorerPrompt() {
   console.log(`Which scoring algorithm would you like to use?\n\n
